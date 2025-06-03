@@ -17,7 +17,7 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/source
 RUN wget https://download.qemu.org/qemu-${QEMU_VERSION}.tar.xz && \
     tar xf qemu-${QEMU_VERSION}.tar.xz && \
     cd qemu-${QEMU_VERSION} && \ 
-    ./configure --target-list=riscv64-softmmu,riscv64-linux-user --enable-sdl --enable-slirp && \
+    ./configure --target-list=riscv64-softmmu,riscv64-linux-user && \
     make -j$(nproc) && \
     make install
 
